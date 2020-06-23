@@ -14,9 +14,10 @@ python:
     - "nightly"  # nightly build
 
 install:
-    - pip install --user codecov
+    - pip install --user codecov flake8 pytest
 
 script:
+    - flake8 cmdbox
     - pytest
 
 after_success:

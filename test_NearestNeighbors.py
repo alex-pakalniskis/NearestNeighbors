@@ -1,8 +1,11 @@
 import unittest
+from NearestNeighbors import NearestNeighbors
+
+default_model = NearestNeighbors()
 
 class test_NearestNeighbors(unittest.TestCase):
     """
-    docstring
+    Unit tests for NearestNeighbors class
     """
 
     def test_fit(self):

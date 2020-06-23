@@ -1,14 +1,15 @@
 # NearestNeighbors
 
-Implementation of Nearest Neighbors algorithm as a Python class
+Implementation of k-Nearest Neighbors algorithm 
 
-_Maintained by [Alex Pakalniskis](alexpakalniskis3@gmail.com)_
+_Maintained by Alex Pakalniskis_
 
-### Files
+## To Do List
 
-* `NearestNeighbors.py` - Nearest Neighbors class
-* `test_NearestNeighbors.py` - Unit tests
-* `README.md` - High-level project details
-* `LICENSE` - Information about using this code
-* `.gitignore` - File to ignore for version control
-* `.travis.yml` - Configuration for Travis CI
+* Complete `NearestNeighbors.py`
+* Complete `test_NearestNeighbors.py`
+* Complete example usage
+* Complete sklearn usage
+* Complete comparison example
+* Sync Travis CI
+* Write a short blog post
