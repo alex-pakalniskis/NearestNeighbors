@@ -11,5 +11,5 @@ _Maintained by Alex Pakalniskis_
 * Complete example usage
 * Complete sklearn usage
 * Complete comparison example
-* Sync Travis CI
+* Sync Travis CI (clean setup.cfg for erroneous references)
 * Write a short blog post
