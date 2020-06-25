@@ -26,13 +26,14 @@ class NearestNeighbors:
         self.ids = []
         self.distances = []
 
-    def predict(self, y, k=3):
+    def predict(self, y, k=3, metric="euclidian"):
         """
         Predict nearest neighbors to a user-supplied input
 
         Args:
             y: User input data
             k: Number of neighbors to return
+            metric: "jaccard" for boolean vectors, "euclidean" for numeric vectors
 
         Returns:
             k nearest neighbors and euclidian distances to y
@@ -47,14 +48,26 @@ class NearestNeighbors:
 
         assert len(y) == len(self.X.columns) - 1
 
-        for i in range(len(self.X)):
-            self.distances.append(distance.euclidean(y, 
-                                                     self.X_no_labels.iloc[i]))
-            self.ids.append(self.X[self.X.columns[0]].iloc[i])
+        if metric == "jaccard":
+            for i in range(len(self.X)):
+                self.distances.append(distance.jaccard(y, 
+                                                        self.X_no_labels.iloc[i]))
+                self.ids.append(self.X[self.X.columns[0]].iloc[i])
 
-        self.distance_df = pd.DataFrame([self.ids, self.distances], 
-                                        index=["ids","distances"]).T
-        return self.distance_df.sort_values("distances")[:k]
+            self.distance_df = pd.DataFrame([self.ids, self.distances], 
+                                            index=["ids","distances"]).T
+            return self.distance_df.sort_values("distances")[:k]
+
+        else:
+
+            for i in range(len(self.X)):
+                self.distances.append(distance.euclidean(y, 
+                                                        self.X_no_labels.iloc[i]))
+                self.ids.append(self.X[self.X.columns[0]].iloc[i])
+
+            self.distance_df = pd.DataFrame([self.ids, self.distances], 
+                                            index=["ids","distances"]).T
+            return self.distance_df.sort_values("distances")[:k]
 
 
 
