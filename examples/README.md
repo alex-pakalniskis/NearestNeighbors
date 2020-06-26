@@ -1,1 +1,1 @@
-Example usage of NearestNeighbors class from scratch, from scikit-learn, and a quick comparison of results from both
+Example usage of NearestNeighbors class from scratch and the scikit-learn implementation
